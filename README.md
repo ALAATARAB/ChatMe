@@ -19,4 +19,5 @@ _ nodeJs(express) <br />
 _ mongoDB(mongoose) <br />
 _ WebSocket <br />
 _ JWT <br />
-_ MVC pattern
+
+***To preview the project click : [Here](https://www.linkedin.com/posts/mohammed-alaa-tarabishe_hello-everyone-chat-me-here-a-real-activity-7126616184677879808-2NTi/)***
