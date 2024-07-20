@@ -34,4 +34,5 @@ app.use((error, req, res, next) =>{
 mongoose.connect('mongodb+srv://alaa:<alaa>@cluster0.grgltyn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(async result=> {
     let server = app.listen(8080);
     initSocket(server);
+    console.log("server started");
 }).catch(err=>console.log(err));
