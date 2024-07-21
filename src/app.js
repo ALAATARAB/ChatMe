@@ -11,12 +11,12 @@ const userRoutes = require('./routes/userOp');
 const messagesRoutes = require('./routes/messages');
 
 
-app.use(cors( {
-    credentials:true,
-    origin:'*'
-}));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors( {
+    credentials:true,
+    origin:['https://alaatarab.github.io/chat-me','https://alaatarab.github.io']
+}));
 
 app.use('/auth',authRoutes);
 app.use('/userOp',userRoutes);
