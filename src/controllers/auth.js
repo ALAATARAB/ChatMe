@@ -26,22 +26,17 @@ exports.logIn = async (req,res,next) => {
 
 exports.signUp = async (req,res,next)=> {
     const errors = validationResult(req);
-    console.log("hello");
     if (!errors.isEmpty()) {
         next(getError(errors.array()[0].msg,409));
         return;
     }
-    console.log("hello2");
     const {userName,email,password} = req.body;
     try {
         let {userId} = await AuthServeice.createNewUser(userName,email,password);
-        console.log("hello3");
         let token = await TokenServies.assignToken({userId:userId,userName:userName});
-        console.log("hello4");
-        res.cookie('token',token,{secure:true,sameSite:'none',maxAge:1000*60*60*24*7}).status(201).json({userId,token});
+        res.cookie('token',token,{secure:true,maxAge:1000*60*60*24*7}).status(201).json({userId,token});
     }
     catch (err) {
-        console.log(err);
         next(getError(err.error,err.status));
     }
 }
