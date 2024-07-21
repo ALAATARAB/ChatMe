@@ -26,6 +26,7 @@ exports.logIn = async (req,res,next) => {
 
 exports.signUp = async (req,res,next)=> {
     const errors = validationResult(req);
+    console.log("hello");
     if (!errors.isEmpty()) {
         next(getError(errors.array()[0].msg,409));
         return;
