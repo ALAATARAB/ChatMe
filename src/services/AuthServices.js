@@ -18,6 +18,7 @@ async function createNewUser(userName,email,password) {
         return {userId:createdUser._id};
     }
     catch (err) {
+        console.log(err);
         throw {error:'There is an issue in server',status:500};
     }
 }
