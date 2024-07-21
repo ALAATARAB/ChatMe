@@ -13,7 +13,7 @@ const messagesRoutes = require('./routes/messages');
 
 app.use(cors( {
     credentials:true,
-    origin:'https://alaatarab.github.io/chat-me'
+    origin:'*'
 }));
 app.use(express.json());
 app.use(cookieParser());
